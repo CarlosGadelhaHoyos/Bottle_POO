@@ -2,9 +2,17 @@ public class WaterBottle implements Bottle{
 
     //variables
     private String bottleType;
-    private boolean tampada;
+    private boolean capped;
     private boolean empty;
-    private float howMuchFilled;
+    private int howMuchFilled;
+
+    public WaterBottle(String x){
+
+        this.bottleType = x;
+        this.capped = true;
+        this.empty = false;
+        this.howMuchFilled = 100;
+    } 
 
     @Override
     public void cap() {
