@@ -4,4 +4,5 @@ public interface Bottle{
     public abstract void uncap();
     public abstract void fill();
     public abstract void drink();
+    public abstract void status();
 }
