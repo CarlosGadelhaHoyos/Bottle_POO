@@ -17,22 +17,32 @@ public class WaterBottle implements Bottle{
     @Override
     public void cap() {
         // TODO Auto-generated method stub
-        this.setCapped(true);
-        System.out.println("Bottle capped.");
+        if(!this.isCapped()){
+            this.setCapped(true);
+            System.out.println("Bottle capped.");
+        }else{
+            System.out.println("The bottle is already capped.");
+        }
     }
 
     @Override
     public void uncap() {
         // TODO Auto-generated method stub
-        this.setCapped(false);
-        System.out.println("Bottle uncapped.");
+        if(this.isCapped()){
+            this.setCapped(false);
+            System.out.println("Bottle uncapped.");
+        }else{
+            System.out.println("The bottle is already uncapped.");
+        }
     }
 
     @Override
     public void fill() {
         // TODO Auto-generated method stub
-        this.setHowMuchFilled(100);
-        System.out.println("Bottle: "+ this.getHowMuchFilled()+ "\nThe bottle is full");
+        if(!this.isCapped() && this.getHowMuchFilled() < 100){
+            this.setHowMuchFilled(100);
+            System.out.println("Bottle: "+ this.getHowMuchFilled()+ "\nThe bottle is full");
+        }else if(this.isCapped()){
     }
 
     @Override
