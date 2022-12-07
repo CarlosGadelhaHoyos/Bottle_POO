@@ -43,6 +43,10 @@ public class WaterBottle implements Bottle{
             this.setHowMuchFilled(100);
             System.out.println("Bottle: "+ this.getHowMuchFilled()+ "\nThe bottle is full");
         }else if(this.isCapped()){
+            System.out.println("It is not possible to fill the bottle capped.");
+        }else if(!this.isCapped() && this.getHowMuchFilled() == 100){
+            System.out.println("It is not posible to fill a bottle that is full.");
+        }
     }
 
     @Override
@@ -112,5 +116,4 @@ public class WaterBottle implements Bottle{
     public void setHowMuchFilled(int howMuchFilled) {
         this.howMuchFilled = howMuchFilled;
     }
-
 }
